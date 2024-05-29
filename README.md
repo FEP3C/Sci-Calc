@@ -44,7 +44,7 @@ To install and set up Sci-Calc, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/FEP3C/sci-calc.git
+   git clone https://github.com/FEP3C/Sci-Calc.git
    ```
 
 2. **Navigate to the project directory:**
