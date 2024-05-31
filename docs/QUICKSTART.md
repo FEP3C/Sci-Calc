@@ -16,7 +16,7 @@ Welcome to Sci-Calc! This guide will help you get started with using Sci-Calc, a
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/FEP3C/sci-calc.git
+   git clone https://github.com/FEP3C/Sci-Calc.git
    ```
 
 2. **Navigate to the project directory:**
@@ -28,8 +28,8 @@ Welcome to Sci-Calc! This guide will help you get started with using Sci-Calc, a
 3. **Create and activate a virtual environment (optional but recommended):**
 
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   python3 -m venv .venv
+   source .venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
 4. **Install the required dependencies:**
@@ -43,7 +43,7 @@ Welcome to Sci-Calc! This guide will help you get started with using Sci-Calc, a
 To start the Sci-Calc command-line interface, run the following command:
 
 ```bash
-python src/cli_interface.py
+python src/sci_calc.py
 ```
 
 You can now enter mathematical expressions directly into the terminal. Here are some examples of what you can do:
@@ -74,6 +74,7 @@ Sci-Calc supports a variety of mathematical operations:
   - Sine, Cosine, Tangent
 
 - **Logarithmic Functions:**
+  - Basic Logarithm
   - Logarithm (base 10)
   - Natural Logarithm (base e)
 
@@ -129,4 +130,4 @@ Sci-Calc is licensed under the MIT License. See the [LICENSE](../LICENSE) file f
 
 ---
 
-Thank you for using Sci-Calc! If you have any questions or need further assistance, feel free to open an issue on the [GitHub repository](https://github.com/your-username/sci-calc). Happy calculating!
+Thank you for using Sci-Calc! If you have any questions or need further assistance, feel free to open an issue on the [GitHub repository](https://github.com/FEP3C/Sci-Calc). Happy calculating!
