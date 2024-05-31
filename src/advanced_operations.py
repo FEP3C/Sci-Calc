@@ -1,4 +1,6 @@
 import math
+
+
 class AdvancedOperations:
     @staticmethod
     def square(a):
@@ -15,8 +17,8 @@ class AdvancedOperations:
         return math.sqrt(a)
 
     @staticmethod
-    def cbrt(a):
-        return a ** (1/3)
+    def cube_root(a):
+        return a ** (1 / 3)
 
     @staticmethod
     def ln(a):
