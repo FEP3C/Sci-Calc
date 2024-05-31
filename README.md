@@ -56,8 +56,8 @@ To install and set up Sci-Calc, follow these steps:
 3. **Create and activate a virtual environment (optional but recommended):**
 
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   python3 -m venv .venv
+   source .venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
 4. **Install the required dependencies:**
@@ -71,7 +71,7 @@ To install and set up Sci-Calc, follow these steps:
 To start using Sci-Calc, run the command-line interface:
 
 ```bash
-python src/cli_interface.py
+python src/sci_calc.py
 ```
 
 You can then enter mathematical expressions directly into the terminal. Here are some examples:
