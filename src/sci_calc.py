@@ -1,7 +1,8 @@
 import argparse
 from settings import Settings
 from cli_interface import CLIInterface
-from expressions_parser import ExpressionParser
+from basic_operations import add, subtract, multiply, divide
+from advanced_operations import square, cube, sqrt, cbrt, ln, log10, log_base, reciprocal, abs_val, factorial
 
 class Calculator:
     def __init__(self):
@@ -12,6 +13,36 @@ class Calculator:
             return "quit"
         parser = ExpressionParser(expression)
         return parser.evaluate()
+
+class ExpressionParser:
+    def __init__(self, expression):
+        self.expression = expression
+
+    def evaluate(self):
+        try:
+            result = eval(self.expression, {"__builtins__": None}, self.get_operations())
+            return result
+        except Exception as e:
+            return str(e)
+
+    def get_operations(self):
+        return {
+            "add": add,
+            "subtract": subtract,
+            "multiply": multiply,
+            "divide": divide,
+            "square": square,
+            "cube": cube,
+            "sqrt": sqrt,
+            "cbrt": cbrt,
+            "ln": ln,
+            "log10": log10,
+            "log_base": log_base,
+            "reciprocal": reciprocal,
+            "abs": abs_val,
+            "factorial": factorial,
+            "math": __import__('math')  # Import the math module for additional operations
+        }
 
 def interactive_fix_settings(calculator):
     settings_info = calculator.settings.display_settings()
@@ -61,4 +92,3 @@ if __name__ == "__main__":
         # Start calculator
         cli = CLIInterface(calculator)
         cli.start()
-
