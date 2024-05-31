@@ -1,8 +1,8 @@
 import argparse
 from settings import Settings
 from cli_interface import CLIInterface
-from basic_operations import add, subtract, multiply, divide
-from advanced_operations import square, cube, sqrt, cbrt, ln, log10, log_base, reciprocal, abs_val, factorial
+from basic_operations import BasicOperations
+from advanced_operations import AdvancedOperations
 
 class Calculator:
     def __init__(self):
@@ -27,20 +27,20 @@ class ExpressionParser:
 
     def get_operations(self):
         return {
-            "add": add,
-            "subtract": subtract,
-            "multiply": multiply,
-            "divide": divide,
-            "square": square,
-            "cube": cube,
-            "sqrt": sqrt,
-            "cbrt": cbrt,
-            "ln": ln,
-            "log10": log10,
-            "log_base": log_base,
-            "reciprocal": reciprocal,
-            "abs": abs_val,
-            "factorial": factorial,
+            "add": BasicOperations.add,
+            "subtract": BasicOperations.subtract,
+            "multiply": BasicOperations.multiply,
+            "divide": BasicOperations.divide,
+            "square": AdvancedOperations.square,
+            "cube": AdvancedOperations.cube,
+            "sqrt": AdvancedOperations.sqrt,
+            "cube_root": AdvancedOperations.cube_root,
+            "ln": AdvancedOperations.ln,
+            "log10": AdvancedOperations.log10,
+            "log_base": AdvancedOperations.log_base,
+            "reciprocal": AdvancedOperations.reciprocal,
+            "abs": AdvancedOperations.abs_val,
+            "factorial": AdvancedOperations.factorial,
             "math": __import__('math')  # Import the math module for additional operations
         }
 
