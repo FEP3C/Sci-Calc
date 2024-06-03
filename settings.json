@@ -1,0 +1,7 @@
+{
+    "version": "1.0",
+    "angle_unit": "degree",
+    "precision": 3,
+    "theme_color": "white",
+    "decimal_separator": "dot"
+}
