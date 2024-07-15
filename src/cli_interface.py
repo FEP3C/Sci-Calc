@@ -32,6 +32,8 @@ class CLIInterface:
             if result == "quit":
                 break
             print(f"The Result is: {result}")
-        
-        print(f"{self.color}Have a good day!{Style.RESET_ALL}")
+
+        random_messages = ["Farewell", "See you again", "Goodbye", "Take care", "Until next time"]
+        goodbye_message = random.choice(random_messages)
+        print(f"{self.color}{goodbye_message}{Style.RESET_ALL}")
 
