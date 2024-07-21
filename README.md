@@ -1,4 +1,4 @@
-# Sci-Calc
+8# Sci-Calc
 
 Sci-Calc 是一款用 Python 编写的功能强大的命令行科学计算器。 它支持从基本算术到高级函数和三角函数等多种数学运算。
 
@@ -136,6 +136,5 @@ Sci-Calc 采用 MIT 许可。 更多信息请参见 [LICENSE](LICENSE) 文件。
 
 ---
 
-感谢您使用 Sci-Calc！ 如果您有任何问题或需要进一步帮助，请随时在 [GitHub 代码库](https://github.com/FEP3C/Sci-Calc) 上提交问题。 祝您计算愉快
+感谢您使用 Sci-Calc！ 如果您有任何问题或需要进一步帮助，请随时在 [GitHub 代码库](https://github.com/FEP3C/Sci-Calc) 上提交问题。 祝您计算愉快！
 
-通过DeepL翻译 https://www.deepl.com/app/?utm_source=android&utm_medium=app&utm_campaign=share-translation
