@@ -78,7 +78,7 @@ python src/sci_calc.py
 
 - 基本算术：`2 + 3`、`5 - 2`、`4 * 3`、`8 / 2
 - 绝对值： `abs(-5)`
-- 幂和根： `square(4)`, `cube(3)`, `sqrt(16)`, `cbrt(27)`
+- 幂和根： `square(4)`, `cube(3)`, `sqrt(16)`, `cube_root(27)`
 - 阶乘： 阶乘(5)
 - 倒数: `reciprocal(4)`
 - 三角函数： sin(30)`，cos(60)`，tan(45)
