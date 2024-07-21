@@ -1,139 +1,141 @@
 # Sci-Calc
 
-Sci-Calc is a powerful command-line scientific calculator written in Python. It supports a wide range of mathematical operations, from basic arithmetic to advanced functions and trigonometry.
+Sci-Calc 是一款用 Python 编写的功能强大的命令行科学计算器。 它支持从基本算术到高级函数和三角函数等多种数学运算。
 
-## Table of Contents
+## 目录
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [功能](#功能)
+- [安装](#安装)
+- [使用方法](#使用方法)
+- [文件结构](#文件结构)
+- [贡献](#贡献)
+- [许可证](#许可证)
 
-## Features
+## 功能
 
-Sci-Calc provides the following features:
+Sci-Calc 提供以下功能：
 
-- **Basic Operations:**
-  - Addition
-  - Subtraction
-  - Multiplication
-  - Division
+- **基本操作：**
+  - 加法运算
+  - 减法
+  - 乘法
+  - 除法
 
-- **Advanced Operations:**
-  - Absolute Value
-  - Square, Cube
-  - Square Root, Cube Root
-  - Factorial
-  - Reciprocal
+- 高级运算：**
+  - 绝对值
+  - 平方、立方
+  - 平方根、立方根
+  - 阶乘
+  - 倒数
 
-- **Trigonometric Functions:**
-  - Sine
-  - Cosine
-  - Tangent
+- 三角函数：**
+  - 正弦
+  - 余弦
+  - 正切
 
-- **Logarithmic Functions:**
-  - Logarithm (base 10)
-  - Natural Logarithm (base e)
+- 对数函数：**
+  - 对数（基数 10）
+  - 自然对数（以 e 为底）
 
-## Installation
+## 安装
 
-To install and set up Sci-Calc, follow these steps:
+按照以下步骤安装和设置 Sci-Calc：
 
-1. **Clone the repository:**
+1. **克隆版本库：**
 
    ```bash
    git clone https://github.com/FEP3C/Sci-Calc.git
    ```
 
-2. **Navigate to the project directory:**
+2. **导航到项目目录：**
 
    ```bash
    cd sci-calc
    ```
 
-3. **Create and activate a virtual environment (optional but recommended):**
+3. **创建并激活虚拟环境（可选，但推荐）：**
 
    ```bash
    python3 -m venv .venv
-   source .venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source .venv/bin/activate # 在 Windows 上使用 `venv\Scripts\activate` 。
    ```
 
-4. **Install the required dependencies:**
+4. **安装所需的依赖项：**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+## 使用方法
 
-To start using Sci-Calc, run the command-line interface:
+要开始使用 Sci-Calc，请运行命令行界面：
 
 ```bash
 python src/sci_calc.py
 ```
 
-You can then enter mathematical expressions directly into the terminal. Here are some examples:
+然后，你可以直接在终端输入数学表达式。 下面是一些示例：
 
-- Basic arithmetic: `2 + 3`, `5 - 2`, `4 * 3`, `8 / 2`
-- Absolute value: `abs(-5)`
-- Powers and roots: `square(4)`, `cube(3)`, `sqrt(16)`, `cbrt(27)`
-- Factorial: `factorial(5)`
-- Reciprocal: `reciprocal(4)`
-- Trigonometric functions: `sin(30)`, `cos(60)`, `tan(45)`
-- Logarithms: `log(100)`, `log10(100)`, `ln(2)`
+- 基本算术：`2 + 3`、`5 - 2`、`4 * 3`、`8 / 2
+- 绝对值： `abs(-5)`
+- 幂和根： `square(4)`, `cube(3)`, `sqrt(16)`, `cbrt(27)`
+- 阶乘： 阶乘(5)
+- 倒数: `reciprocal(4)`
+- 三角函数： sin(30)`，cos(60)`，tan(45)
+- 对数： `log(100)`, `log10(100)`, `ln(2)`
 
-## File Structure
+## 文件结构
 
-The project is organized as follows:
+项目结构如下
 
 ```
 sci-calc/
 │
 ├── bin/
-│   └── (Executable scripts, if any)
+│ └─── （可执行脚本，如果有的话）
 │
 ├── docs/
-│   └── (Documentation files)
+│ └─── （文档文件）
 │
 ├── src/
-│   ├── sci_calc.py
-│   ├── expressions_parser.py
-│   ├── basic_operations.py
-│   ├── advanced_operations.py
-│   ├── cli_interface.py
-│   └── settings.py
+│ ├── sci_calc.py
+│ ├─── expressions_parser.py
+├─── 基本操作.py
+├─── 高级操作.py
+│ ├──cli_interface.py
+│ └─── settings.py
 │
 ├── .gitignore
 ├── LICENSE
 └── README.md
 ```
 
-- **src/sci_calc.py:** Main module that integrates all functionalities.
-- **src/expressions_parser.py:** Parses and evaluates mathematical expressions.
-- **src/basic_operations.py:** Contains functions for basic arithmetic operations.
-- **src/advanced_operations.py:** Contains functions for advanced mathematical operations.
-- **src/cli_interface.py:** Command-line interface logic.
-- **src/settings.py:** Configuration settings for the project.
+- **src/sci_calc.py:** 集成所有功能的主模块。
+- **src/expressions_parser.py:** 解析和评估数学表达式。
+- **src/basic_operations.py:** 包含基本算术运算函数。
+- **src/advanced_operations.py:** 包含高级数学运算函数。
+- **src/cli_interface.py:** 命令行界面逻辑。
+- **src/settings.py:** 项目的配置设置。
 
-## Contributing
+## 贡献
 
-We welcome contributions to Sci-Calc! To contribute, follow these steps:
+我们欢迎为 Sci-Calc 投稿！ 要投稿，请按照以下步骤操作：
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
+1. 分叉仓库。
+2. 创建一个新分支（`git checkout -b feature-branch`）。
+3. 进行更改。
+4. 提交改动（`git commit -m 'Add some feature'`）。
+5. 推送到分支（`git push origin feature-branch`）。
+6. 打开拉取请求。
 
-Please ensure your code follows the project's coding standards and includes appropriate tests.
+请确保你的代码遵循项目的编码标准并包含适当的测试。
 
-## License
+## 许可证
 
-Sci-Calc is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+Sci-Calc 采用 MIT 许可。 更多信息请参见 [LICENSE](LICENSE) 文件。
 
 ---
 
-Thank you for using Sci-Calc! If you have any questions or need further assistance, feel free to open an issue on the [GitHub repository](https://github.com/FEP3C/Sci-Calc). Happy calculating!
+感谢您使用 Sci-Calc！ 如果您有任何问题或需要进一步帮助，请随时在 [GitHub 代码库](https://github.com/FEP3C/Sci-Calc) 上提交问题。 祝您计算愉快
+
+通过DeepL翻译 https://www.deepl.com/app/?utm_source=android&utm_medium=app&utm_campaign=share-translation
