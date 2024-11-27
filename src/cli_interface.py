@@ -1,6 +1,9 @@
 import random
 import colorama
 from colorama import Fore, Style
+import atexit
+import os
+import readline
 
 class CLIInterface:
     def __init__(self, calculator):
@@ -73,6 +76,14 @@ Type 'quit()' to exit{Style.RESET_ALL}
 
     def start(self):
         self.display_banner()
+        histfile = os.path.join(os.path.expanduser("~"), ".sci_calchist")
+        try:
+            readline.read_history_file(histfile)
+            readline.set_history_length(1000)
+        except FileNotFoundError:
+            pass
+
+        atexit.register(readline.write_history_file, histfile)
         
         while True:
             try:
