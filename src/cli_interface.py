@@ -75,7 +75,10 @@ Type 'quit()' to exit{Style.RESET_ALL}
         self.display_banner()
         
         while True:
-            expression = input(f"{self.color}Sci-Calc>>> {Style.RESET_ALL}")
+            try:
+                expression = input(f"{self.color}Sci-Calc>>> {Style.RESET_ALL}")
+            except EOFError:
+                break
             if expression.lower() == 'help':
                 self.display_help()
                 continue

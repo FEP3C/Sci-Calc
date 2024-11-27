@@ -44,6 +44,7 @@ class ExpressionParser:
             "tan": AdvancedOperations.tan,
             "ln": AdvancedOperations.ln,
             "log10": AdvancedOperations.log10,
+            "lg": AdvancedOperations.log10,
             "log_base": AdvancedOperations.log,
             "reciprocal": AdvancedOperations.reciprocal,
             "abs": AdvancedOperations.abs,
@@ -55,25 +56,37 @@ class ExpressionParser:
 def interactive_fix_settings(calculator):
     settings_info = calculator.settings.display_settings()
     current_settings = calculator.settings.get_settings()
+    settings_filter = calculator.settings.settings_filter()
 
     print("Current Settings:")
-    for key, value in current_settings.items():
-        print(f"{key}: {value} - {settings_info[key]}")
+    for key in settings_info.keys():
+        print(f"{key}: {current_settings[key]} - {settings_info[key]}")
 
     print("\nEnter the number of the setting you want to change or 'done' to finish:")
-    settings_list = list(current_settings.keys())
+    settings_list = list(settings_info.keys())
     for i, setting in enumerate(settings_list, start=1):
         print(f"{i}. {setting} ({settings_info[setting]})")
 
     settings_to_fix = {}
     while True:
-        choice = input("> ")
+        try:
+            choice = input("> ")
+        except EOFError:
+            print()
+            break
         if choice.lower() == 'done':
             break
         if choice.isdigit() and 1 <= int(choice) <= len(settings_list):
             key = settings_list[int(choice) - 1]
             new_value = input(f"Enter new value for {key} ({settings_info[key]}): ")
+            if not settings_filter[key](new_value):
+                print(f"Invalid value. Please enter a valid value for {key} ({settings_info[key]})")
+                continue
             settings_to_fix[key] = new_value
+        elif choice.lower() in ('list', 'help'):
+            settings_list = list(settings_info.keys())
+            for i, setting in enumerate(settings_list, start=1):
+                print(f"{i}. {setting} ({settings_info[setting]})")
         else:
             print("Invalid choice. Please enter a number corresponding to the setting or 'done' to finish.")
 

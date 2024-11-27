@@ -1,7 +1,7 @@
 {
-    "version": "1.0",
+    "version": "1.0.0",
     "angle_unit": "degree",
-    "precision": 3,
-    "theme": "blue",
+    "precision": "5",
+    "theme": "green",
     "decimal_separator": "dot"
 }

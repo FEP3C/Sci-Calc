@@ -26,7 +26,6 @@ class Settings:
     @staticmethod
     def display_settings():
         return {
-            "version": "The version number of the calculator",
             "angle_unit": "Angle unit (degree, radian, polar)",
             "precision": "Number of decimal places",
             "theme": "Theme color (white, green, blue, red)",
@@ -34,11 +33,20 @@ class Settings:
         }
 
     @staticmethod
+    def settings_filter():
+        return {
+            "angle_unit": lambda x: x in ["degree", "radian", "polar"],
+            "precision": str.isdigit,
+            "theme": lambda x: x in ["red", "blue", "green", "white"],
+            "decimal_separator": lambda x: x in ["comma", "dot"]
+        }
+
+    @staticmethod
     def default_settings():
         return {
             "version": "1.0.0",
             "angle_unit": "degree",
-            "precision": 2,
+            "precision": "2",
             "theme": "white",
             "decimal_separator": "."
         }
