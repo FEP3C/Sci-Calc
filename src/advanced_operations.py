@@ -22,6 +22,18 @@ class AdvancedOperations:
         return a ** (1 / 3)
 
     @staticmethod
+    def sin(a):
+        return math.sin(a)
+
+    @staticmethod
+    def cos(a):
+        return math.cos(a)
+
+    @staticmethod
+    def tan(a):
+        return math.tan(a)
+
+    @staticmethod
     def ln(a):
         return math.log(a)
 
