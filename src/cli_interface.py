@@ -5,7 +5,7 @@ from colorama import Fore, Style
 class CLIInterface:
     def __init__(self, calculator):
         self.calculator = calculator
-        self.color = self.get_color(calculator.settings.get_settings().get('theme_color', 'white'))
+        self.color = self.get_color(calculator.settings.get_settings().get('theme', 'white'))
         colorama.init()
 
     def get_color(self, color_name):
