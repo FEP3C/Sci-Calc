@@ -20,9 +20,9 @@ class CLIInterface:
     def display_banner(self):
         banner = f"""
 {self.color}╔══════════════════════════════════════════════════════════════════════╗
-║                     Scientific Calculator (Sci-Calc)                    ║
-║                                                                        ║
-║          Fuzhou No.2 High School Python Creative Coding Club          ║
+║                     Scientific Calculator (Sci-Calc)                 ║
+║                                                                      ║
+║          Fuzhou No.2 High School Python Creative Coding Club         ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
 📝 GitHub Repository: https://github.com/FEP3C/Sci-Calc
