@@ -147,4 +147,3 @@ class ExpressionParser:
     def evaluate(self):
         return self.evaluator.evaluate()
 
-        return self.evaluator.evaluate()
