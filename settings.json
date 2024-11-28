@@ -2,6 +2,6 @@
     "version": "1.0.0",
     "angle_unit": "degree",
     "precision": 2,
-    "theme": "green",
+    "theme": "blue",
     "decimal_separator": "."
 }
