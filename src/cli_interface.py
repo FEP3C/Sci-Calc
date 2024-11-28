@@ -32,7 +32,7 @@ class CLIInterface:
 
 💡 Available Operations:
    • Basic: +, -, *, /
-   • Advanced: abs(), square(), cube(), sqrt(), factorial()
+   • Advanced: abs(), square(), cube(), sqrt(), factorial(), reciprocal()
    • Trigonometric: sin(), cos(), tan()
    • Logarithmic: log(), ln()
 
@@ -62,6 +62,7 @@ Type 'quit()' to exit{Style.RESET_ALL}
    • Cube: cube(x)
    • Square Root: sqrt(x)
    • Factorial: factorial(x)
+   · Reciprocal: reciprocal(x)
 
 3. Trigonometric Functions:
    • Sine: sin(x)
