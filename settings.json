@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
-    "angle_unit": "degree",
-    "precision": 2,
+    "angle_unit": "radian",
+    "precision": "12",
     "theme": "blue",
     "decimal_separator": "."
 }
