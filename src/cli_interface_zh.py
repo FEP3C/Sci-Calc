@@ -34,7 +34,7 @@ class CLIInterface:
    • 四则计算: +, -, *, /
    • 高级函数: abs(), square(), cube(), sqrt(), factorial(), reciprocal()
    • 三角函数: sin(), cos(), tan()
-   • 对数计算: log(), ln()
+   • 对数计算: lg(), ln()
 
  🤝 想要贡献代码吗？
    1. 在 GitHub 仓库中 Fork 项目并阅读 `Docs` 文件夹
@@ -42,8 +42,8 @@ class CLIInterface:
    3. 合并拟定功能到我们的主分支
    4. 等待我们审核并合并代码
 
-Type 'help' for command list
-Type 'quit()' to exit{Style.RESET_ALL}
+输入 'help' 显示指令列表。
+输入 'quit()' 退出程序{Style.RESET_ALL}
 """
         print(banner)
 

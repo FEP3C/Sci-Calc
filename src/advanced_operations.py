@@ -45,11 +45,11 @@ class AdvancedOperations:
 
 
     @staticmethod
-    def log10(a):
+    def lg(a):
         return math.log10(a)
 
     @staticmethod
-    def reciprocal(a):
+    def r(a):
         if a == 0:
             raise ValueError("Cannot take reciprocal of zero")
         return 1 / a
@@ -59,7 +59,7 @@ class AdvancedOperations:
         return abs(a)
 
     @staticmethod
-    def factorial(a):
+    def f(a):
         if not isinstance(a, int) or a < 0:
             raise ValueError("Factorial is not defined for negative numbers or non-integers")
         return math.factorial(a)
