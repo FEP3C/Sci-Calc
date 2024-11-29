@@ -23,7 +23,7 @@ class CLIInterface:
     def display_banner(self):
         banner = f"""
 {self.color}╔══════════════════════════════════════════════════════════════════════╗
-║                  Scientific Calculator (Sci-Calc)                    ║
+║                     Scientific Calculator (Sci-Calc)                 ║
 ║                                                                      ║
 ║          Fuzhou No.2 High School Python Creative Coding Club         ║
 ╚══════════════════════════════════════════════════════════════════════╝
@@ -62,7 +62,7 @@ Type 'quit()' to exit{Style.RESET_ALL}
    • Cube: cube(x)
    • Square Root: sqrt(x)
    • Factorial: factorial(x)
-   • Reciprocal: reciprocal(x)
+   · Reciprocal: reciprocal(x)
 
 3. Trigonometric Functions:
    • Sine: sin(x)
