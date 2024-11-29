@@ -40,6 +40,7 @@ class CLIInterface:
    1. Read our documentation in the Docs folder
    2. Create a new branch and submit a Pull Request
    3. Merge your changes with our source code
+   4. We will review your code and merge it if it meets our standards
 
 Type 'help' for command list
 Type 'quit()' to exit{Style.RESET_ALL}

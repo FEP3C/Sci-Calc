@@ -23,23 +23,24 @@ class CLIInterface:
     def display_banner(self):
         banner = f"""
 {self.color}╔══════════════════════════════════════════════════════════════════════╗
-║                     Scientific Calculator (Sci-Calc)                 ║
+║                     科学计算器 (Sci-Calc)                            ║
 ║                                                                      ║
-║          Fuzhou No.2 High School Python Creative Coding Club         ║
+║          福州二中 Python创意编程社区 2024 版权所有 © 2024            ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
-📝 GitHub Repository: https://github.com/FEP3C/Sci-Calc
+📝 GitHub 仓库地址: https://github.com/FEP3C/Sci-Calc
 
-💡 Available Operations:
-   • Basic: +, -, *, /
-   • Advanced: abs(), square(), cube(), sqrt(), factorial(), reciprocal()
-   • Trigonometric: sin(), cos(), tan()
-   • Logarithmic: log(), ln()
+💡 可以计算的功能:
+   • 四则计算: +, -, *, /
+   • 高级函数: abs(), square(), cube(), sqrt(), factorial(), reciprocal()
+   • 三角函数: sin(), cos(), tan()
+   • 对数计算: log(), ln()
 
-🤝 Want to Contribute?
-   1. Read our documentation in the Docs folder
-   2. Create a new branch and submit a Pull Request
-   3. Merge your changes with our source code
+ 🤝 想要贡献代码吗？
+   1. 在 GitHub 仓库中 Fork 项目并阅读 `Docs` 文件夹
+   2. 创建新Branch并进行PR
+   3. 合并拟定功能到我们的主分支
+   4. 等待我们审核并合并代码
 
 Type 'help' for command list
 Type 'quit()' to exit{Style.RESET_ALL}
@@ -48,30 +49,30 @@ Type 'quit()' to exit{Style.RESET_ALL}
 
     def display_help(self):
         help_text = f"""
-{self.color}Available Commands:
+{self.color}指令列表:
 ------------------
-1. Basic Operations:
-   • Addition: a + b
-   • Subtraction: a - b
-   • Multiplication: a * b
-   • Division: a / b
+1. 四则运算:
+   • 加法: a + b
+   • 减法: a - b
+   • 乘法: a * b
+   • 除法: a / b
 
-2. Advanced Functions:
-   • Absolute Value: abs(x)
-   • Square: square(x)
-   • Cube: cube(x)
-   • Square Root: sqrt(x)
-   • Factorial: factorial(x)
-   · Reciprocal: reciprocal(x)
+2. 高级函数:
+   • 绝对值函数: abs(x)
+   • 平方: square(x)
+   • 立方: cube(x)
+   • 平方根: sqrt(x)
+   • 阶乘: factorial(x)
+   • 倒数: reciprocal(x)
 
-3. Trigonometric Functions:
-   • Sine: sin(x)
-   • Cosine: cos(x)
-   • Tangent: tan(x)
+3. 三角函数:
+   • 正弦函数: sin(x)
+   • 余弦函数: cos(x)
+   • 正切函数: tan(x)
 
-4. Logarithmic Functions:
-   • Common Log (base 10): log(x)
-   • Natural Log: ln(x){Style.RESET_ALL}
+4. 对数函数:
+   • 常见对数 (底数为10): lg(x)
+   • 自然对数: ln(x){Style.RESET_ALL}
 """
         print(help_text)
 
@@ -101,11 +102,11 @@ Type 'quit()' to exit{Style.RESET_ALL}
             print(f"{self.color}Result: {result}{Style.RESET_ALL}")
 
         random_messages = [
-            "Farewell! Thanks for using Sci-Calc! 👋",
-            "See you next time! Happy calculating! ✨",
-            "Goodbye! Remember, math is fun! 🌟",
-            "Take care! Keep exploring mathematics! 📚",
-            "Until next time, stay curious! 🔢"
+            "再见! 感谢使用Sci-Calc! 👋",
+            "下次见! 祝你算得开心! ✨",
+            "拜拜! 记住，数学很有趣! 🌟",
+            "再会! Keep exploring mathematics! 📚",
+            "直到下一次时见, 保持好奇! 🔢"
         ]
         goodbye_message = random.choice(random_messages)
         print(f"\n{self.color}{goodbye_message}{Style.RESET_ALL}")
