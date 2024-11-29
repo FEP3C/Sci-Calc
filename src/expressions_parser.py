@@ -9,34 +9,33 @@ class Tokenizer:
 
     def tokenize(self, expression):
         token_specification = [
-            ('NUMBER',   r'\d+(\.\d*)?'),  # Integer or decimal number
-            ('ADD',      r'\+'),           # Addition operator
-            ('SUB',      r'-'),            # Subtraction operator
-            ('MUL',      r'\*'),           # Multiplication operator
-            ('DIV',      r'/'),            # Division operator
-            ('LPAREN',   r'\('),           # Left Parenthesis
-            ('RPAREN',   r'\)'),           # Right Parenthesis
-            ('SIN',      r'sin'),          # Sine function
-            ('COS',      r'cos'),          # Cosine function
-            ('TAN',      r'tan'),          # Tangent function
-            ('SQRT',     r'sqrt'),         # Square root function
-            ('FACTORIAL',r'!'),            # Factorial operator
-            ('WS',       r'\s+'),          # Whitespace (ignored)
+            ('NUMBER',   r'\d+(\.\d*)?'),  # 整数或小数
+            ('ADD',      r'\+'),           # 加法运算符
+            ('SUB',      r'-'),            # 减法运算符
+            ('MUL',      r'\*'),           # 乘法运算符
+            ('DIV',      r'/'),            # 除法运算符
+            ('LPAREN',   r'$'),           # 左括号
+            ('RPAREN',   r'$'),           # 右括号
+            ('SIN',      r'sin'),          # 正弦函数
+            ('COS',      r'cos'),          # 余弦函数
+            ('TAN',      r'tan'),          # 正切函数
+            ('SQRT',     r'sqrt'),         # 平方根函数
+            ('FACTORIAL',r'!'),            # 阶乘运算符
+            ('WS',       r'\s+'),          # 空格（忽略）
         ]
         tok_regex = '|'.join(f'(?P<{pair[0]}>{pair[1]})' for pair in token_specification)
         get_token = re.compile(tok_regex).match
         tokens = []
         pos = 0
-        match = get_token(expression)
-        while match is not None:
+        while pos < len(expression):
+            match = get_token(expression, pos)
+            if match is None:
+                raise SyntaxError(f'Unexpected character {expression[pos]} at position {pos}')
             type = match.lastgroup
             value = match.group(type)
             if type != 'WS':
                 tokens.append((type, value))
             pos = match.end()
-            match = get_token(expression, pos)
-        if pos != len(expression):
-            raise SyntaxError(f'Unexpected character {expression[pos]} at position {pos}')
         return tokens
 
     def next_token(self):
@@ -85,7 +84,7 @@ class ShuntingYard:
             type, value = token
             if type == 'NUMBER':
                 self.output.append(value)
-            elif type in ('ADD', 'SUB', 'MUL', 'DIV', 'SIN', 'COS', 'TAN', 'SQRT', 'FACTORIAL'):
+            elif type in self.precedence:
                 while (self.operators and self.operators[-1] != 'LPAREN' and
                        (self.precedence[self.operators[-1]] > self.precedence[type] or
                        (self.precedence[self.operators[-1]] == self.precedence[type] and self.associativity[type] == 'L'))):
@@ -96,9 +95,13 @@ class ShuntingYard:
             elif type == 'RPAREN':
                 while self.operators and self.operators[-1] != 'LPAREN':
                     self.output.append(self.operators.pop())
+                if not self.operators:
+                    raise SyntaxError("Mismatched parentheses.")
                 self.operators.pop()
             token = self.tokenizer.next_token()
         while self.operators:
+            if self.operators[-1] == 'LPAREN':
+                raise SyntaxError("Mismatched parentheses.")
             self.output.append(self.operators.pop())
         return self.output
 
@@ -109,11 +112,10 @@ class Evaluator:
     def evaluate(self):
         stack = []
         for token in self.rpn:
-            if re.match(r'\d+(\.\d*)?', token):  # if token is a number
+            if re.match(r'\d+(\.\d*)?', token):  # 如果token是数字
                 stack.append(float(token))
             elif token in ('ADD', 'SUB', 'MUL', 'DIV'):
-                b = stack.pop()
-                a = stack.pop()
+                b, a = stack.pop(), stack.pop()
                 if token == 'ADD':
                     stack.append(a + b)
                 elif token == 'SUB':
@@ -121,8 +123,10 @@ class Evaluator:
                 elif token == 'MUL':
                     stack.append(a * b)
                 elif token == 'DIV':
+                    if b == 0:
+                        raise ZeroDivisionError("Division by zero.")
                     stack.append(a / b)
-            elif token in ('SIN', 'COS', 'TAN', 'SQRT'):
+            elif token in ('SIN', 'COS', 'TAN', 'SQRT', 'FACTORIAL'):
                 a = stack.pop()
                 if token == 'SIN':
                     stack.append(math.sin(math.radians(a)))
@@ -132,10 +136,11 @@ class Evaluator:
                     stack.append(math.tan(math.radians(a)))
                 elif token == 'SQRT':
                     stack.append(math.sqrt(a))
-            elif token == 'FACTORIAL':
-                a = stack.pop()
-                stack.append(math.factorial(int(a)))
-        return stack[0]
+                elif token == 'FACTORIAL':
+                    if a < 0:
+                        raise ValueError("Factorial of a negative number is undefined.")
+                    stack.append(math.factorial(int(a)))
+        return stack[0] if stack else None  # Return None if stack is empty
 
 class ExpressionParser:
     def __init__(self, expression):
@@ -146,4 +151,3 @@ class ExpressionParser:
 
     def evaluate(self):
         return self.evaluator.evaluate()
-
