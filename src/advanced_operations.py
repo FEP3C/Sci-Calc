@@ -23,25 +23,26 @@ class AdvancedOperations:
 
     @staticmethod
     def sin(a):
-        return math.sin(a)
+        return math.sin(math.radians(a))
 
     @staticmethod
     def cos(a):
-        return math.cos(a)
+        return math.cos(math.radians(a))
 
     @staticmethod
     def tan(a):
-        return math.tan(a)
+        return math.tan(math.radians(a))
 
     @staticmethod
     def ln(a):
         return math.log(a)
 
     @staticmethod
-    def log(a, base=10):
+    def log(a, base=10):  # 将 base 的默认值设为 10
         if base <= 0 or base == 1:
             raise ValueError("Base must be greater than 0 and not equal to 1")
         return math.log(a) / math.log(base)
+
 
     @staticmethod
     def log10(a):
