@@ -38,18 +38,11 @@ class AdvancedOperations:
         return math.log(a)
 
     @staticmethod
-    def log(a, base=10):  # 将 base 的默认值设为 10
-        if base <= 0 or base == 1:
-            raise ValueError("Base must be greater than 0 and not equal to 1")
-        return math.log(a) / math.log(base)
-
-
-    @staticmethod
     def lg(a):
         return math.log10(a)
 
     @staticmethod
-    def r(a):
+    def reciprocal(a):
         if a == 0:
             raise ValueError("Cannot take reciprocal of zero")
         return 1 / a
@@ -59,7 +52,7 @@ class AdvancedOperations:
         return abs(a)
 
     @staticmethod
-    def f(a):
+    def factorial(a):
         if not isinstance(a, int) or a < 0:
             raise ValueError("Factorial is not defined for negative numbers or non-integers")
         return math.factorial(a)

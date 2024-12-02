@@ -45,10 +45,9 @@ class ExpressionParser:
             "ln": AdvancedOperations.ln,
             "log10": AdvancedOperations.log10,
             "lg": AdvancedOperations.log10,
-            "log_base": AdvancedOperations.log,
-            "reciprocal": AdvancedOperations.reciprocal,
+            "r": AdvancedOperations.reciprocal,
             "abs": AdvancedOperations.abs,
-            "factorial": AdvancedOperations.factorial,
+            "f": AdvancedOperations.factorial,
             "math": __import__('math')  # Import the math module for additional operations
         }
 
