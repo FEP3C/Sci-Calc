@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     # Argument parser
     parser = argparse.ArgumentParser(description='Scientific Calculator')
-    parser.add_argument('--fix-settings', action='store_true', help='Fix settings')
+    parser.add_argument('--fix', action='store_true', help='Fix settings')
     parser.add_argument('--settings', action='store_true', help='View settings')
     args = parser.parse_args()
 

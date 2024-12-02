@@ -62,8 +62,8 @@ class CLIInterface:
    • 平方: square(x)
    • 立方: cube(x)
    • 平方根: sqrt(x)
-   • 阶乘: factorial(x)
-   • 倒数: reciprocal(x)
+   • 阶乘: f(x)
+   • 倒数: r(x)
 
 3. 三角函数:
    • 正弦函数: sin(x)
