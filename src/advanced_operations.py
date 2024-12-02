@@ -34,6 +34,12 @@ class AdvancedOperations:
         return math.tan(math.radians(a))
 
     @staticmethod
+    def log(a, base=10):
+        if a <= 0 or base == 1:
+            raise ValueError("Cannot take logarithm of non-positive number or base equal to 1")
+        return math.log(a, base)
+    
+    @staticmethod
     def ln(a):
         return math.log(a)
 
