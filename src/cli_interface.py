@@ -62,8 +62,8 @@ Type 'quit()' to exit{Style.RESET_ALL}
    • Square: square(x)
    • Cube: cube(x)
    • Square Root: sqrt(x)
-   • Factorial: factorial(x)
-   • Reciprocal: reciprocal(x)
+   • Factorial: f(x)
+   • Reciprocal: r(x)
 
 3. Trigonometric Functions:
    • Sine: sin(x)
